@@ -1,5 +1,4 @@
-import { authorizeRoles } from './../middleware/auth';
-import { activateUser, getUserInfo, loginUser, logoutUser, updateAccessToken, socialAuth } from './../controllers/user.controller';
+import { activateUser, getUserInfo, loginUser, logoutUser, updateAccessToken, socialAuth, updateUserInfo, updatePassword, updateProfilePicture } from './../controllers/user.controller';
 import express from 'express';
 import { registrationUser } from '../controllers/user.controller';
 import { isAuthenticated } from '../middleware/auth';
@@ -18,5 +17,11 @@ userRouter.get("/refresh", updateAccessToken);
 userRouter.get('/me', isAuthenticated, getUserInfo);
 
 userRouter.post('/socialAuth', socialAuth);
+
+userRouter.put('/update-user-info', isAuthenticated, updateUserInfo);
+
+userRouter.put('/update-user-password', isAuthenticated, updatePassword);
+
+userRouter.put('/update-user-avatar', isAuthenticated, updateProfilePicture);
 
 export default userRouter;
