@@ -1,4 +1,3 @@
-import { Menu, School } from 'lucide-react'
 import { Button } from './ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -13,6 +12,8 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { Separator } from '@radix-ui/react-dropdown-menu';
+import { Link } from 'react-router-dom';
+import { Menu, School } from 'lucide-react';
 
 
 const Navbar = () => {
@@ -39,10 +40,10 @@ const Navbar = () => {
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem>
-                      My Learning
+                      <Link to="my-learning">My Learning</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      Edit Profile
+                      <Link to="profile">Edit Profile</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       Log Out
