@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
@@ -5,9 +6,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Loader2 } from "lucide-react"
 import Course from "./Course"
+import { useLoadUserQuery } from "@/features/api/authApi"
 
 const Profile = () => {
-    const isLoading = false;
+
+    const { data, isLoading } = useLoadUserQuery();
+    // console.log(data);
+    
     const enrolledCourses = [1];
     return (
         <div className="max-w-4xl mx-auto my-24 px-4">

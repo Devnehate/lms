@@ -21,15 +21,15 @@ const appRouter = createBrowserRouter([
           </>
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
-        path: "/my-learning",
+        path: "my-learning",
         element: <MyLearning />,
       },
       {
-        path: "/profile",
+        path: "profile",
         element: <Profile />,
       },
     ]
